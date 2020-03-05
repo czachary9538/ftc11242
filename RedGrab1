@@ -1,0 +1,91 @@
+package org.firstinspires.ftc.teamcode;
+
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
+
+@Autonomous(name = "RedGrab1 (Blocks to Java)", group = "")
+public class RedGrab1 extends LinearOpMode {
+
+  private DcMotor bl;
+  private DcMotor br;
+  private DcMotor fl;
+  private DcMotor fr;
+  private Servo latch;
+  private Servo BrLatch ;
+  private Servo BlLatch;
+  private DcMotor lift;
+  private DcMotor tape; 
+  /**
+   * This function is executed when this Op Mode is selected from the Driver Station.
+   */
+  @Override
+  public void runOpMode() {
+    bl = hardwareMap.dcMotor.get("bl");
+    br = hardwareMap.dcMotor.get("br");
+    fl = hardwareMap.dcMotor.get("fl");
+    fr = hardwareMap.dcMotor.get("fr");
+    latch = hardwareMap.servo.get("latch");
+    BrLatch = hardwareMap.servo.get ("br foundation latch");
+    BlLatch = hardwareMap.servo.get ("bl foundation latch");
+    lift = hardwareMap.dcMotor.get("lift");
+    tape = hardwareMap.dcMotor.get("tape");
+
+    // YEET
+    waitForStart();
+    
+    bl.setPower(-1);
+    br.setPower(1);
+    fl.setPower(-1);
+    fr.setPower(1);
+    sleep(1000);
+    bl.setPower(0);
+    br.setPower(0);
+    fl.setPower(0);
+    fr.setPower(0);
+    // GRAB YEET
+    latch.setPosition(-1);
+    sleep(2000);
+    // YEET BACKWARDS
+    bl.setPower(1);
+    br.setPower(-1);
+    fl.setPower(1);
+    fr.setPower(-1);
+    sleep(600);
+    //Yeet turn we have to edit before ever match 
+    bl.setPower(-1);
+    br.setPower(-1);
+    fl.setPower(-1);
+    fr.setPower(-1);
+    sleep(625);
+    //driveFoward
+    bl.setPower(-1);
+    br.setPower(1);
+    fl.setPower(-1);
+    fr.setPower(1);
+    sleep(1050);
+    latch.setPosition(1);
+    sleep(100);
+    //backwards
+    bl.setPower(1);
+    br.setPower(-1);
+    fl.setPower(1);
+    fr.setPower(-1);
+    sleep(2000);
+    //turn around
+    bl.setPower(-1);
+    br.setPower(-1);
+    fl.setPower(-1);
+    fr.setPower(-1);
+    sleep(1150);
+    
+    bl.setPower(0);
+    br.setPower(0);
+    fl.setPower(0);
+    fr.setPower(0);
+    //tape measure extend 
+    tape.setPower(1);
+    sleep(3500);
+  }
+  }
