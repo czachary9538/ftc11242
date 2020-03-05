@@ -1,0 +1,170 @@
+package org.firstinspires.ftc.teamcode;
+
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
+
+@Autonomous(name = "RedSideblocks (Blocks to Java)", group = "")
+public class RedSideblocks extends LinearOpMode {
+
+  private DcMotor bl;
+  private DcMotor br;
+  private DcMotor fl;
+  private DcMotor fr;
+  private Servo latch;
+  private Servo BrLatch ;
+  private Servo BlLatch;
+  private DcMotor lift;
+  private DcMotor tape; 
+  /**
+   * This function is executed when this Op Mode is selected from the Driver Station.
+   */
+  @Override
+  public void runOpMode() {
+    bl = hardwareMap.dcMotor.get("bl");
+    br = hardwareMap.dcMotor.get("br");
+    fl = hardwareMap.dcMotor.get("fl");
+    fr = hardwareMap.dcMotor.get("fr");
+    latch = hardwareMap.servo.get("latch");
+    BrLatch = hardwareMap.servo.get ("br foundation latch");
+    BlLatch = hardwareMap.servo.get ("bl foundation latch");
+    lift = hardwareMap.dcMotor.get("lift");
+    tape = hardwareMap.dcMotor.get("tape");
+
+    // YEET
+    waitForStart();
+    
+    bl.setPower(-1);
+    br.setPower(1);
+    fl.setPower(-1);
+    fr.setPower(1);
+    sleep(1000);
+    bl.setPower(0);
+    br.setPower(0);
+    fl.setPower(0);
+    fr.setPower(0);
+    // GRAB YEET
+    latch.setPosition(-1);
+    sleep(2000);
+    // YEET BACKWARDS
+    bl.setPower(1);
+    br.setPower(-1);
+    fl.setPower(1);
+    fr.setPower(-1);
+    sleep(600);
+    //Yeet turn we have to edit before ever match 
+    bl.setPower(-1);
+    br.setPower(-1);
+    fl.setPower(-1);
+    fr.setPower(-1);
+    sleep(595);
+    //driveFoward
+    bl.setPower(-1);
+    br.setPower(1);
+    fl.setPower(-1);
+    fr.setPower(1);
+    sleep(1200);
+    latch.setPosition(1);
+    sleep(100);
+    //drive to blocks slide 
+     bl.setPower(1);
+    br.setPower(-1);
+    fl.setPower(1);
+    fr.setPower(-1);
+    sleep(1950);
+    //turn to blocks 
+    bl.setPower(1);
+    br.setPower(1);
+    fl.setPower(1);
+    fr.setPower(1);
+    sleep(525);
+    //drive foward 
+    bl.setPower(-.5);
+    br.setPower(.5);
+    fl.setPower(-.5);
+    fr.setPower(.5);
+    sleep(500);
+    //grable block
+    latch.setPosition(-1);
+    bl.setPower(0);
+    br.setPower(0);
+    fl.setPower(0);
+    fr.setPower(0);
+    sleep(1000);
+    //backwards
+    bl.setPower(1);
+    br.setPower(-1);
+    fl.setPower(1);
+    fr.setPower(-1);
+    sleep(800);
+    //Yeet turn we have to edit before ever match 
+    bl.setPower(-1);
+    br.setPower(-1);
+    fl.setPower(-1);
+    fr.setPower(-1);
+    sleep(595);
+    //drive foward
+    bl.setPower(-1);
+    br.setPower(1);
+    fl.setPower(-1);
+    fr.setPower(1);
+    sleep(2000);
+    latch.setPosition(1);
+    sleep(100);
+    //drive to blocks slide 
+     bl.setPower(1);
+    br.setPower(-1);
+    fl.setPower(1);
+    fr.setPower(-1);
+    sleep(2600);   //////////////////////////////// was 2700
+    //turn to blocks 
+    bl.setPower(1);
+    br.setPower(1);
+    fl.setPower(1);
+    fr.setPower(1);
+    sleep(600);
+    //drive foward 
+    bl.setPower(-.5);
+    br.setPower(.5);
+    fl.setPower(-.5);
+    fr.setPower(.5);
+    sleep(1000); /////////////////////////////was 900
+    //grable block
+    latch.setPosition(-1);
+    bl.setPower(0);
+    br.setPower(0);
+    fl.setPower(0);
+    fr.setPower(0);
+    sleep(1000);
+    //backwards
+    bl.setPower(1);
+    br.setPower(-1);
+    fl.setPower(1);
+    fr.setPower(-1);
+    sleep(700);
+    //Yeet turn we have to edit before ever match 
+    bl.setPower(-1);
+    br.setPower(-1);
+    fl.setPower(-1);
+    fr.setPower(-1);
+    sleep(580);
+    //move fowards 
+    bl.setPower(-1);
+    br.setPower(1);
+    fl.setPower(-1);
+    fr.setPower(1);
+    sleep(2500);
+     latch.setPosition(1);
+    bl.setPower(0);
+    br.setPower(0);
+    fl.setPower(0);
+    fr.setPower(0);
+    sleep(1000);
+     bl.setPower(1);
+    br.setPower(-1);
+    fl.setPower(1);
+    fr.setPower(-1);
+    sleep(650);
+  }
+  }
